@@ -30,49 +30,60 @@
         <div class="roulette-section">
             <div class="roulette-wrapper">
                 <div class="roulette-track" id="track1">
-                    <div class="nft-card">🖼️ <span>⭐ 50</span></div>
-                    <div class="nft-card">🎨 <span>⭐ 120</span></div>
-                    <div class="nft-card">💎 <span>⭐ 500</span></div>
-                    <div class="nft-card">🚀 <span>⭐ 80</span></div>
-                    <div class="nft-card">🔥 <span>⭐ 250</span></div>
+                    <div class="nft-card">🏆 <span>⭐ 100</span></div>
+                    <div class="nft-card">💍 <span>⭐ 100</span></div>
+                    <div class="nft-card">💎 <span>⭐ 100</span></div>
+                    <div class="nft-card">🍾 <span>⭐ 50</span></div>
+                    <div class="nft-card">💐 <span>⭐ 50</span></div>
                     <!-- Дубли для бесконечности -->
-                    <div class="nft-card">🖼️ <span>⭐ 50</span></div>
-                    <div class="nft-card">🎨 <span>⭐ 120</span></div>
-                    <div class="nft-card">💎 <span>⭐ 500</span></div>
-                    <div class="nft-card">🚀 <span>⭐ 80</span></div>
-                    <div class="nft-card">🔥 <span>⭐ 250</span></div>
+                    <div class="nft-card">🏆 <span>⭐ 100</span></div>
+                    <div class="nft-card">💍 <span>⭐ 100</span></div>
+                    <div class="nft-card">💎 <span>⭐ 100</span></div>
+                    <div class="nft-card">🍾 <span>⭐ 50</span></div>
+                    <div class="nft-card">💐 <span>⭐ 50</span></div>
                 </div>
             </div>
             <button class="spin-btn">Крутить 0/5</button>
         </div>
 
-        <!-- Рулетка 2 -->
-        <div class="roulette-section">
-            <div class="roulette-wrapper">
-                <div class="roulette-track" id="track2">
-                    <div class="nft-card pink">👑 <span>⭐ 1000</span></div>
-                    <div class="nft-card pink">⚡ <span>⭐ 400</span></div>
-                    <div class="nft-card pink">🌈 <span>⭐ 600</span></div>
-                    <div class="nft-card pink">👻 <span>⭐ 300</span></div>
-                    <div class="nft-card pink">🍀 <span>⭐ 150</span></div>
-                    <div class="nft-card pink">👑 <span>⭐ 1000</span></div>
-                    <div class="nft-card pink">⚡ <span>⭐ 400</span></div>
-                    <div class="nft-card pink">🌈 <span>⭐ 600</span></div>
-                    <div class="nft-card pink">👻 <span>⭐ 300</span></div>
-                    <div class="nft-card pink">🍀 <span>⭐ 150</span></div>
-                </div>
+<!-- Рулетка 2 (Премиальная) -->
+<div class="roulette-section">
+    <div class="roulette-wrapper premium">
+        <div class="roulette-track" id="track2">
+            <!-- Карточка 1 -->
+            <div class="nft-card premium-card">
+                <video autoplay loop muted playsinline class="nft-video">
+                    <source src="https://motionbgs.com/media/811/snoop-dogg-cyberpunk.mp4" type="video/mp4">
+                </video>
+                <div class="card-info"><span>⭐ 1000</span></div>
             </div>
-            <button class="spin-btn">Крутить 0/10</button>
+            <!-- Карточка 2 -->
+            <div class="nft-card premium-card">
+                <img src="https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExNHJueGZ3bmZ3bmZ3bmZ3bmZ3bmZ3bmZ3bmZ3bmZ3bmZ3bmZ3JmVwPXYxX2ludGVybmFsX2dpZl9ieV9pZCZjdD1n/3o7TKMGpxxS05mH15S/giphy.gif" class="nft-gif">
+                <div class="card-info"><span>⭐ 400</span></div>
+            </div>
+            <!-- Карточка 3 (Снуп Дог стиль) -->
+            <div class="nft-card premium-card">
+                <video autoplay loop muted playsinline class="nft-video">
+                    <source src="https://nft.fragment.com/nft/demo_video.mp4" type="video/mp4">
+                </video>
+                <div class="card-info"><span>⭐ 600</span></div>
+            </div>
+            <!-- Повтор для бесконечности (продублируй те же карточки еще раз) -->
+            <div class="nft-card premium-card">
+                <video autoplay loop muted playsinline class="nft-video">
+                    <source src="https://motionbgs.com/media/811/snoop-dogg-cyberpunk.mp4" type="video/mp4">
+                </video>
+                <div class="card-info"><span>⭐ 1000</span></div>
+            </div>
+            <div class="nft-card premium-card">
+                <img src="https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExNHJueGZ3bmZ3bmZ3bmZ3bmZ3bmZ3bmZ3bmZ3bmZ3bmZ3bmZ3JmVwPXYxX2ludGVybmFsX2dpZl9ieV9pZCZjdD1n/3o7TKMGpxxS05mH15S/giphy.gif" class="nft-gif">
+                <div class="card-info"><span>⭐ 400</span></div>
+            </div>
         </div>
-
-        <footer class="footer">
-            <label for="username">Введи username аккаунта куда получить подарок</label>
-            <div class="input-container">
-                <input type="text" id="username" placeholder="@username...">
-                <span id="username-error" class="error-text">Некорректный юзернейм</span>
-            </div>
-        </footer>
     </div>
+    <button class="spin-btn premium-btn">Крутить за 100 ⭐</button>
+</div>
 
     <!-- Модальное окно Логина -->
     <div id="modal-overlay" class="modal-overlay">
