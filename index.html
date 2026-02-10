@@ -9,8 +9,63 @@
     <script src="https://telegram.org/js/telegram-web-app.js"></script>
 </head>
 <body>
-    <h1>Привет, это мой первый Web App!</h1>
+    <div class="container">
+    <!-- Шапка -->
+    <header class="header">
+        <h1 class="title">NFT Treat</h1>
+        <div class="conditions-box">
+            <p class="conditions-label">Условия:</p>
+            <p class="conditions-text">Подпишись на канал и крути рулетку каждый день!</p>
+        </div>
+    </header>
 
+    <!-- Рулетка №1 -->
+    <div class="roulette-section">
+        <div class="roulette-wrapper">
+            <div class="roulette-track" id="track1">
+                <!-- Карточки (дублируются для бесконечного цикла) -->
+                <div class="nft-card">🖼️ <span>⭐ 50</span></div>
+                <div class="nft-card">🎨 <span>⭐ 120</span></div>
+                <div class="nft-card">💎 <span>⭐ 500</span></div>
+                <div class="nft-card">🚀 <span>⭐ 80</span></div>
+                <div class="nft-card">🔥 <span>⭐ 250</span></div>
+                <!-- Повтор для анимации -->
+                <div class="nft-card">🖼️ <span>⭐ 50</span></div>
+                <div class="nft-card">🎨 <span>⭐ 120</span></div>
+                <div class="nft-card">💎 <span>⭐ 500</span></div>
+                <div class="nft-card">🚀 <span>⭐ 80</span></div>
+                <div class="nft-card">🔥 <span>⭐ 250</span></div>
+            </div>
+        </div>
+        <button class="spin-btn">Крутить за 50 ⭐</button>
+    </div>
+
+    <!-- Рулетка №2 -->
+    <div class="roulette-section">
+        <div class="roulette-wrapper">
+            <div class="roulette-track" id="track2">
+                <div class="nft-card pink">👑 <span>⭐ 1000</span></div>
+                <div class="nft-card pink">⚡ <span>⭐ 400</span></div>
+                <div class="nft-card pink">🌈 <span>⭐ 600</span></div>
+                <div class="nft-card pink">👻 <span>⭐ 300</span></div>
+                <div class="nft-card pink">🍀 <span>⭐ 150</span></div>
+                <!-- Повтор -->
+                <div class="nft-card pink">👑 <span>⭐ 1000</span></div>
+                <div class="nft-card pink">⚡ <span>⭐ 400</span></div>
+                <div class="nft-card pink">🌈 <span>⭐ 600</span></div>
+                <div class="nft-card pink">👻 <span>⭐ 300</span></div>
+                <div class="nft-card pink">🍀 <span>⭐ 150</span></div>
+            </div>
+        </div>
+        <button class="spin-btn">Крутить за 100 ⭐</button>
+    </div>
+
+    <!-- Нижняя часть -->
+    <footer class="footer">
+        <label for="username">Введи username аккаунта куда получить подарок</label>
+        <input type="text" id="username" placeholder="@username..." />
+    </footer>
+</div>
     <script>
         // Сообщаем Телеграму, что приложение готово к работе
         window.Telegram.WebApp.ready();
