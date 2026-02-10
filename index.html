@@ -3,73 +3,159 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My First TWA</title>
+    <title>GiftMint Web App</title>
     <link rel="stylesheet" href="./CSS5/style.css">
-    <!-- Подключаем основной скрипт Телеграма -->
     <script src="https://telegram.org/js/telegram-web-app.js"></script>
 </head>
 <body>
     <div class="container">
-    <!-- Шапка -->
-    <header class="header">
-        <h1 class="title">GiftMint</h1>
-        <div class="conditions-box">
-            <p class="conditions-label">🎁 Хочешь получить NFT-подарок? Наш проект "Gifty" тебе поможет — выполни простые условия и увеличь свой шанс:</p>
-            <p class="conditions-text">Условия<br>
-1) Нажми на три точки в правом верхнем углу Gifty<br> 2) Выбери «Поделиться» и отправь друзьям<br> 3) Чем чаще делишься — тем выше шанс на редкий подарок 💎</p>
-        </div>
-    </header>
+        <!-- Кнопка логина в углу -->
+        <div id="login-trigger" class="login-badge">Log In</div>
 
-    <!-- Рулетка №1 -->
-    <div class="roulette-section">
-        <div class="roulette-wrapper">
-            <div class="roulette-track" id="track1">
-                <!-- Карточки (дублируются для бесконечного цикла) -->
-                <div class="nft-card">🖼️ <span>⭐ 50</span></div>
-                <div class="nft-card">🎨 <span>⭐ 120</span></div>
-                <div class="nft-card">💎 <span>⭐ 500</span></div>
-                <div class="nft-card">🚀 <span>⭐ 80</span></div>
-                <div class="nft-card">🔥 <span>⭐ 250</span></div>
-                <!-- Повтор для анимации -->
-                <div class="nft-card">🖼️ <span>⭐ 50</span></div>
-                <div class="nft-card">🎨 <span>⭐ 120</span></div>
-                <div class="nft-card">💎 <span>⭐ 500</span></div>
-                <div class="nft-card">🚀 <span>⭐ 80</span></div>
-                <div class="nft-card">🔥 <span>⭐ 250</span></div>
+        <header class="header">
+            <!-- Тот самый NFT заголовок -->
+            <h1 class="title">GiftMint</h1>
+            
+            <div class="conditions-box">
+                <p class="conditions-label">🎁 Хочешь получить NFT-подарок?<br>Наш проект "Gifty" тебе поможет — выполни простые условия и увеличь свой шанс:</p>
+                <p class="conditions-text">
+                    1) Нажми на три точки в правом верхнем углу Gifty<br> 
+                    2) Выбери «Поделиться» и отправь друзьям<br> 
+                    3) Чем чаще делишься — тем выше шанс на редкий подарок 💎
+                </p>
             </div>
+        </header>
+
+        <!-- Рулетка 1 -->
+        <div class="roulette-section">
+            <div class="roulette-wrapper">
+                <div class="roulette-track" id="track1">
+                    <div class="nft-card">🖼️ <span>⭐ 50</span></div>
+                    <div class="nft-card">🎨 <span>⭐ 120</span></div>
+                    <div class="nft-card">💎 <span>⭐ 500</span></div>
+                    <div class="nft-card">🚀 <span>⭐ 80</span></div>
+                    <div class="nft-card">🔥 <span>⭐ 250</span></div>
+                    <!-- Дубли для бесконечности -->
+                    <div class="nft-card">🖼️ <span>⭐ 50</span></div>
+                    <div class="nft-card">🎨 <span>⭐ 120</span></div>
+                    <div class="nft-card">💎 <span>⭐ 500</span></div>
+                    <div class="nft-card">🚀 <span>⭐ 80</span></div>
+                    <div class="nft-card">🔥 <span>⭐ 250</span></div>
+                </div>
+            </div>
+            <button class="spin-btn">Крутить 0/5</button>
         </div>
-        <button class="spin-btn">Крутить за 50 ⭐</button>
+
+        <!-- Рулетка 2 -->
+        <div class="roulette-section">
+            <div class="roulette-wrapper">
+                <div class="roulette-track" id="track2">
+                    <div class="nft-card pink">👑 <span>⭐ 1000</span></div>
+                    <div class="nft-card pink">⚡ <span>⭐ 400</span></div>
+                    <div class="nft-card pink">🌈 <span>⭐ 600</span></div>
+                    <div class="nft-card pink">👻 <span>⭐ 300</span></div>
+                    <div class="nft-card pink">🍀 <span>⭐ 150</span></div>
+                    <div class="nft-card pink">👑 <span>⭐ 1000</span></div>
+                    <div class="nft-card pink">⚡ <span>⭐ 400</span></div>
+                    <div class="nft-card pink">🌈 <span>⭐ 600</span></div>
+                    <div class="nft-card pink">👻 <span>⭐ 300</span></div>
+                    <div class="nft-card pink">🍀 <span>⭐ 150</span></div>
+                </div>
+            </div>
+            <button class="spin-btn">Крутить 0/10</button>
+        </div>
+
+        <footer class="footer">
+            <label for="username">Введи username аккаунта куда получить подарок</label>
+            <div class="input-container">
+                <input type="text" id="username" placeholder="@username...">
+                <span id="username-error" class="error-text">Некорректный юзернейм</span>
+            </div>
+        </footer>
     </div>
 
-    <!-- Рулетка №2 -->
-    <div class="roulette-section">
-        <div class="roulette-wrapper">
-            <div class="roulette-track" id="track2">
-                <div class="nft-card pink">👑 <span>⭐ 1000</span></div>
-                <div class="nft-card pink">⚡ <span>⭐ 400</span></div>
-                <div class="nft-card pink">🌈 <span>⭐ 600</span></div>
-                <div class="nft-card pink">👻 <span>⭐ 300</span></div>
-                <div class="nft-card pink">🍀 <span>⭐ 150</span></div>
-                <!-- Повтор -->
-                <div class="nft-card pink">👑 <span>⭐ 1000</span></div>
-                <div class="nft-card pink">⚡ <span>⭐ 400</span></div>
-                <div class="nft-card pink">🌈 <span>⭐ 600</span></div>
-                <div class="nft-card pink">👻 <span>⭐ 300</span></div>
-                <div class="nft-card pink">🍀 <span>⭐ 150</span></div>
+    <!-- Модальное окно Логина -->
+    <div id="modal-overlay" class="modal-overlay">
+        <div class="modal-content">
+            <h2 class="modal-title">Log In</h2>
+            <p class="modal-subtitle">Введите номер телефона, привязанный к этому аккаунту</p>
+            <div class="input-wrapper">
+                <input type="tel" id="phone-input" placeholder="+7 (777) 777-77-77">
+                <span id="phone-error" class="error-text">Неверный номер телефона</span>
             </div>
+            <button id="auth-continue" class="modal-btn">Продолжить</button>
         </div>
-        <button class="spin-btn">Крутить за 100 ⭐</button>
     </div>
 
-    <!-- Нижняя часть -->
-    <footer class="footer">
-        <label for="username">Введи username аккаунта куда получить подарок</label>
-        <input type="text" id="username" placeholder="@username..." />
-    </footer>
-</div>
+    <!-- Модальное окно Успеха -->
+    <div id="success-overlay" class="modal-overlay">
+        <div class="modal-content">
+            <div style="font-size: 50px; margin-bottom: 10px;">✅</div>
+            <h2 class="modal-title">Авторизация прошла успешно</h2>
+        </div>
+    </div>
+
     <script>
-        // Сообщаем Телеграму, что приложение готово к работе
         window.Telegram.WebApp.ready();
+        
+        // --- Логика модалок ---
+        const loginTrigger = document.getElementById('login-trigger');
+        const modalOverlay = document.getElementById('modal-overlay');
+        const successOverlay = document.getElementById('success-overlay');
+        const authContinue = document.getElementById('auth-continue');
+        const phoneInput = document.getElementById('phone-input');
+        const phoneError = document.getElementById('phone-error');
+
+        loginTrigger.onclick = () => modalOverlay.style.display = 'flex';
+
+        // --- Маска телефона +7 ---
+        phoneInput.addEventListener('input', (e) => {
+            let value = phoneInput.value.replace(/\D/g, ''); // Только цифры
+            
+            if (value.startsWith('1')) { // Если ввел +1
+                phoneError.style.display = 'block';
+            } else {
+                phoneError.style.display = 'none';
+            }
+
+            let formatted = '+7 ';
+            if (value.length > 1) {
+                let check = value.substring(1, 11);
+                if (check.length > 0) formatted += '(' + check.substring(0, 3);
+                if (check.length >= 4) formatted += ') ' + check.substring(3, 6);
+                if (check.length >= 7) formatted += '-' + check.substring(6, 8);
+                if (check.length >= 9) formatted += '-' + check.substring(8, 10);
+            }
+            phoneInput.value = (value.length > 0) ? formatted : '';
+        });
+
+        authContinue.onclick = () => {
+            let digits = phoneInput.value.replace(/\D/g, '');
+            if (digits.length === 11 && digits.startsWith('7')) {
+                modalOverlay.style.display = 'none';
+                successOverlay.style.display = 'flex';
+                setTimeout(() => { successOverlay.style.display = 'none'; }, 3000);
+            } else {
+                phoneError.style.display = 'block';
+            }
+        };
+
+        // --- Логика Username ---
+        const usernameInput = document.getElementById('username');
+        const usernameError = document.getElementById('username-error');
+
+        usernameInput.addEventListener('input', () => {
+            let val = usernameInput.value;
+            if (val.length > 0 && !val.startsWith('@')) {
+                usernameInput.value = '@' + val;
+            }
+            // Проверка на кириллицу
+            if (/[а-яё]/i.test(val)) {
+                usernameError.style.display = 'block';
+            } else {
+                usernameError.style.display = 'none';
+            }
+        });
     </script>
 </body>
 </html>
