@@ -24,7 +24,6 @@ body {
     position: relative;
 }
 
-/* Кнопка Log In в углу */
 .login-badge {
     position: absolute;
     top: 5px;
@@ -41,7 +40,6 @@ body {
 
 .header { text-align: center; margin-top: 30px; }
 
-/* Тот самый крутой заголовок */
 .title {
     font-size: 42px;
     font-weight: 900;
@@ -65,7 +63,6 @@ body {
 .conditions-label { font-weight: bold; font-size: 14px; margin-bottom: 8px; line-height: 1.4; }
 .conditions-text { font-size: 13px; color: var(--hint-color); line-height: 1.5; margin: 0; }
 
-/* Рулетка */
 .roulette-wrapper {
     width: 100%;
     overflow: hidden;
@@ -114,7 +111,6 @@ body {
     margin-top: 8px;
 }
 
-/* Модалки */
 .modal-overlay {
     display: none;
     position: fixed;
@@ -177,15 +173,14 @@ input:focus { border-color: var(--button-color); }
 .footer label { font-size: 13px; color: var(--hint-color); display: block; margin-bottom: 8px; }
 
 .nft-image {
-    width: 60px;       /* Ширина картинки внутри карточки */
-    height: 60px;      /* Высота картинки */
-    object-fit: contain; /* Сохраняет пропорции, не растягивает */
-    margin-bottom: 5px;  /* Отступ от текста со звездами */
-    border-radius: 8px;  /* Немного скруглим углы самой картинке */
+    width: 60px;       
+    height: 60px;      
+    object-fit: contain; 
+    margin-bottom: 5px;  
+    border-radius: 8px;  
 }
 
-/* На всякий случай подправим карточку, чтобы картинка и текст влезли */
 .nft-card {
     padding: 10px;
-    height: 110px; /* Чуть увеличим высоту, если нужно */
+    height: 110px; 
 }
