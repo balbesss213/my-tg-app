@@ -11,176 +11,77 @@ body {
     background-color: var(--bg-color);
     color: var(--text-color);
     font-family: 'Segoe UI', Roboto, sans-serif;
-    margin: 0;
-    padding: 0;
-    overflow-x: hidden;
+    margin: 0; padding: 0; overflow-x: hidden;
 }
 
-.container {
-    display: flex;
-    flex-direction: column;
-    padding: 15px;
-    gap: 20px;
-    position: relative;
+.container { display: flex; flex-direction: column; padding: 15px; gap: 20px; position: relative; }
+
+/* БАННЕРЫ */
+.top-banner {
+    position: fixed; top: -100px; left: 0; width: 100%;
+    padding: 15px; text-align: center; font-weight: bold;
+    z-index: 9999; transition: top 0.5s ease;
 }
+.top-banner.success { background: #4caf50; color: white; }
+.top-banner.warning { background: #ff9800; color: white; }
+.top-banner.show { top: 0; }
 
-.login-badge {
-    position: absolute;
-    top: 5px;
-    right: 15px;
-    background: var(--secondary-bg);
-    padding: 6px 16px;
-    border-radius: 20px;
-    font-size: 13px;
-    font-weight: bold;
-    border: 1px solid var(--button-color);
-    cursor: pointer;
-    z-index: 10;
-}
-
-.header { text-align: center; margin-top: 30px; }
-
+.header { text-align: center; margin-top: 20px; }
 .title {
-    font-size: 42px;
-    font-weight: 900;
-    text-transform: uppercase;
-    letter-spacing: 6px;
-    margin: 10px 0;
+    font-size: 42px; font-weight: 900; text-transform: uppercase;
+    letter-spacing: 6px; margin: 10px 0;
     background: linear-gradient(90deg, #00f2fe 0%, #4facfe 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.1));
+    -webkit-background-clip: text; -webkit-text-fill-color: transparent;
 }
 
 .conditions-box {
-    text-align: left;
-    background: var(--secondary-bg);
-    padding: 15px;
-    border-radius: 16px;
-    border: 1px solid rgba(0,0,0,0.05);
+    background: var(--secondary-bg); padding: 15px; border-radius: 16px; text-align: left;
 }
+.conditions-label { font-weight: bold; font-size: 14px; margin-bottom: 5px; display: block; }
+.conditions-text { font-size: 13px; color: var(--hint-color); }
 
-.conditions-label { font-weight: bold; font-size: 14px; margin-bottom: 8px; line-height: 1.4; }
-.conditions-text { font-size: 13px; color: var(--hint-color); line-height: 1.5; margin: 0; }
-
-.roulette-wrapper {
-    width: 100%;
-    overflow: hidden;
-    background: var(--secondary-bg);
-    border-radius: 15px;
-    padding: 15px 0;
-}
-
-.roulette-track {
-    display: flex;
-    gap: 15px;
-    width: max-content;
-    animation: scroll 20s linear infinite;
-}
-
-@keyframes scroll {
-    0% { transform: translateX(0); }
-    100% { transform: translateX(-50%); }
-}
+/* РУЛЕТКА */
+.roulette-wrapper { width: 100%; overflow: hidden; background: var(--secondary-bg); border-radius: 15px; padding: 15px 0; }
+.roulette-track { display: flex; gap: 15px; width: max-content; animation: scroll 20s linear infinite; }
+@keyframes scroll { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
 
 .nft-card {
-    width: 80px;
-    height: 100px;
-    background: var(--bg-color);
-    border-radius: 12px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    font-size: 30px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    width: 80px; height: 110px; background: var(--bg-color);
+    border-radius: 12px; display: flex; flex-direction: column;
+    align-items: center; justify-content: center; box-shadow: 0 4px 10px rgba(0,0,0,0.05);
 }
-
 .nft-card span { font-size: 11px; font-weight: bold; margin-top: 8px; color: #ffa500; }
 .nft-card.pink { border: 1.5px solid #ff007a; }
+.nft-image { width: 60px; height: 60px; object-fit: contain; border-radius: 8px; }
 
 .spin-btn {
-    width: 100%;
-    background-color: var(--button-color);
-    color: var(--button-text);
-    border: none;
-    padding: 14px;
-    border-radius: 14px;
-    font-weight: bold;
-    font-size: 16px;
-    margin-top: 8px;
+    width: 100%; background: var(--button-color); color: var(--button-text);
+    border: none; padding: 14px; border-radius: 14px; font-weight: bold; cursor: pointer;
 }
 
-.modal-overlay {
-    display: none;
-    position: fixed;
-    top: 0; left: 0; width: 100%; height: 100%;
-    background: rgba(0,0,0,0.7);
-    backdrop-filter: blur(5px);
-    z-index: 1000;
-    justify-content: center;
-    align-items: center;
+/* ФУТЕР И ВВОД */
+.input-with-btn { display: flex; gap: 10px; margin-top: 5px; }
+.next-btn {
+    background: var(--button-color); color: white; border: none;
+    width: 55px; border-radius: 12px; font-size: 20px; cursor: pointer;
 }
-
-.modal-content {
-    background: var(--bg-color);
-    width: 85%;
-    padding: 30px 20px;
-    border-radius: 24px;
-    text-align: center;
-}
-
-.modal-title { margin: 0 0 10px; font-size: 24px; }
-.modal-subtitle { font-size: 14px; color: var(--hint-color); margin-bottom: 20px; }
-
-.input-wrapper, .input-container { position: relative; margin-bottom: 10px; }
-
+.footer label { font-size: 13px; color: var(--hint-color); }
 input {
-    width: 100%;
-    background: var(--secondary-bg);
-    border: 1px solid transparent;
-    padding: 14px;
-    border-radius: 12px;
-    color: var(--text-color);
-    font-size: 16px;
-    box-sizing: border-box;
-    outline: none;
+    flex: 1; background: var(--secondary-bg); border: 1px solid transparent;
+    padding: 14px; border-radius: 12px; color: var(--text-color); outline: none;
+}
+.error-text { display: none; color: #ff4d4d; font-size: 11px; margin-top: 5px; }
+
+/* КОШЕЛЕК */
+.wallet-box {
+    margin: 20px 0 40px; padding: 20px; background: var(--secondary-bg);
+    border-radius: 16px; text-align: center; border: 2px dashed #ccc;
 }
 
-input:focus { border-color: var(--button-color); }
-
-.error-text {
-    display: none;
-    color: #ff4d4d;
-    font-size: 11px;
-    text-align: left;
-    margin-top: 4px;
-    padding-left: 5px;
+/* МОДАЛКИ */
+.modal-overlay {
+    display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0,0,0,0.8); z-index: 10000; justify-content: center; align-items: center;
 }
-
-.modal-btn {
-    width: 100%;
-    background: var(--button-color);
-    color: white;
-    border: none;
-    padding: 14px;
-    border-radius: 12px;
-    font-weight: bold;
-    margin-top: 10px;
-}
-
-.footer { margin-top: 10px; }
-.footer label { font-size: 13px; color: var(--hint-color); display: block; margin-bottom: 8px; }
-
-.nft-image {
-    width: 60px;       
-    height: 60px;      
-    object-fit: contain; 
-    margin-bottom: 5px;  
-    border-radius: 8px;  
-}
-
-.nft-card {
-    padding: 10px;
-    height: 110px; 
-}
+.modal-content { background: var(--bg-color); width: 85%; padding: 30px 20px; border-radius: 24px; text-align: center; }
+.modal-btn { width: 100%; background: var(--button-color); color: white; border: none; padding: 14px; border-radius: 12px; font-weight: bold; margin-top: 15px; }

