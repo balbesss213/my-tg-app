@@ -10,58 +10,37 @@
 </head>
 <body>
     <div class="container">
-        <!-- БАННЕРЫ (ВЫЛЕЗАЮТ СВЕРХУ) -->
+        <!-- БАННЕРЫ -->
         <div id="reg-success-banner" class="top-banner success">Регистрация прошла успешно! ✅</div>
-        <div id="condition-banner" class="top-banner warning">Выполните условия: поделитесь с 5-10 друзьями! 🎁</div>
+        <div id="user-linked-banner" class="top-banner info">Юзернейм привязан к системе 🔗</div>
+        <div id="condition-banner" class="top-banner warning">Выполните условия: поделитесь с друзьями! 🎁</div>
 
         <header class="header">
             <h1 class="title">GiftMint</h1>
             <div class="conditions-box">
-                <p class="conditions-label">🎁 Хочешь получить NFT-подарок?<br>Наш проект "Gifty" тебе поможет — выполни простые условия и увеличь свой шанс:</p>
-                <p class="conditions-text">
-                    1) Нажми на три точки в правом верхнем углу Gifty<br> 
-                    2) Выбери «Поделиться» и отправь друзьям<br> 
-                    3) Чем чаще делишься — тем выше шанс на редкий подарок 💎
-                </p>
+                <p class="conditions-label">🎁 Хочешь получить NFT-подарок?</p>
+                <p class="conditions-text">1) Нажми «Крутить» и отправь друзьям<br>2) Чем чаще делишься — тем выше шанс 💎</p>
             </div>
         </header>
 
-        <!-- РУЛЕТКА №1 -->
+        <!-- РУЛЕТКИ (БЕЗ ИЗМЕНЕНИЙ В ДИЗАЙНЕ) -->
         <div class="roulette-section">
-            <div class="roulette-wrapper">
-                <div class="roulette-track" id="track1">
-                    <div class="nft-card">🏆 <span>⭐ 100</span></div>
-                    <div class="nft-card">💍 <span>⭐ 100</span></div>
-                    <div class="nft-card">💎 <span>⭐ 100</span></div>
-                    <div class="nft-card">🍾 <span>⭐ 50</span></div>
-                    <div class="nft-card">💐 <span>⭐ 50</span></div>
-                    <div class="nft-card">🏆 <span>⭐ 100</span></div>
-                    <div class="nft-card">💍 <span>⭐ 100</span></div>
-                    <div class="nft-card">💎 <span>⭐ 100</span></div>
-                    <div class="nft-card">🍾 <span>⭐ 50</span></div>
-                    <div class="nft-card">💐 <span>⭐ 50</span></div>
-                </div>
-            </div>
+            <div class="roulette-wrapper"><div class="roulette-track" id="track1">
+                <div class="nft-card">🏆 <span>⭐ 100</span></div><div class="nft-card">💎 <span>⭐ 100</span></div>
+                <div class="nft-card">🍾 <span>⭐ 50</span></div><div class="nft-card">🏆 <span>⭐ 100</span></div>
+                <div class="nft-card">💎 <span>⭐ 100</span></div><div class="nft-card">🍾 <span>⭐ 50</span></div>
+            </div></div>
             <button class="spin-btn action-spin" data-goal="5">Крутить <span class="share-count">0</span>/5</button>
         </div>
 
-        <!-- РУЛЕТКА №2 -->
         <div class="roulette-section">
-            <div class="roulette-wrapper">
-                <div class="roulette-track" id="track2">
-                    <div class="nft-card pink"><img src="./images/img1.png" class="nft-image"><span>⭐ 623</span></div>
-                    <div class="nft-card pink"><img src="./images/img2.png" class="nft-image"><span>⭐ 1022</span></div>
-                    <div class="nft-card pink"><img src="./images/img3.png" class="nft-image"><span>⭐ 4460</span></div>
-                    <div class="nft-card pink"><img src="./images/img4.png" class="nft-image"><span>⭐ 1213</span></div>
-                    <div class="nft-card pink"><img src="./images/img5.png" class="nft-image"><span>⭐ 849</span></div>
-                    <!-- Повтор для анимации -->
-                    <div class="nft-card pink"><img src="./images/img1.png" class="nft-image"><span>⭐ 623</span></div>
-                    <div class="nft-card pink"><img src="./images/img2.png" class="nft-image"><span>⭐ 1022</span></div>
-                    <div class="nft-card pink"><img src="./images/img3.png" class="nft-image"><span>⭐ 4460</span></div>
-                    <div class="nft-card pink"><img src="./images/img4.png" class="nft-image"><span>⭐ 1213</span></div>
-                    <div class="nft-card pink"><img src="./images/img5.png" class="nft-image"><span>⭐ 849</span></div>
-                </div>
-            </div>
+            <div class="roulette-wrapper"><div class="roulette-track" id="track2">
+                <div class="nft-card pink"><img src="./images/img1.png" class="nft-image"><span>⭐ 623</span></div>
+                <div class="nft-card pink"><img src="./images/img2.png" class="nft-image"><span>⭐ 1022</span></div>
+                <div class="nft-card pink"><img src="./images/img3.png" class="nft-image"><span>⭐ 4460</span></div>
+                <div class="nft-card pink"><img src="./images/img1.png" class="nft-image"><span>⭐ 623</span></div>
+                <div class="nft-card pink"><img src="./images/img2.png" class="nft-image"><span>⭐ 1022</span></div>
+            </div></div>
             <button class="spin-btn action-spin" data-goal="10">Крутить <span class="share-count">0</span>/10</button>
         </div>
 
@@ -75,14 +54,13 @@
             <span id="username-error" class="error-text">Некорректный юзернейм</span>
         </footer>
 
-        <!-- СЕКЦИЯ КОШЕЛЬКА -->
         <div id="wallet-section" class="wallet-box">
-            <p style="margin-bottom: 15px; font-weight: bold;">Для завершения регистрации подключите кошелек:</p>
+            <p style="margin-bottom: 15px; font-weight: bold;">Подключите кошелек для финализации:</p>
             <div id="ton-connect-btn"></div>
         </div>
     </div>
 
-    <!-- МОДАЛКА: ТРЕБУЕТСЯ РЕГИСТРАЦИЯ -->
+    <!-- МОДАЛКА -->
     <div id="modal-reg-required" class="modal-overlay">
         <div class="modal-content">
             <h2 class="modal-title">Внимание!</h2>
@@ -92,15 +70,11 @@
     </div>
 
     <script>
-        // 1. Инициализация TonConnect
         const tonConnectUI = new TON_CONNECT_UI.TonConnectUI({
             manifestUrl: 'https://balbesss213.github.io/my-tg-app/tonconnect-manifest.json', 
             buttonRootId: 'ton-connect-btn' 
         });
 
-        window.Telegram.WebApp.ready();
-
-        // 2. "База данных" (localStorage)
         const db = {
             get isReg() { return localStorage.getItem('isReg') === 'true' },
             set isReg(v) { localStorage.setItem('isReg', v) },
@@ -108,59 +82,63 @@
             set count(v) { localStorage.setItem('count', v) }
         };
 
-        // Элементы
         const usernameInput = document.getElementById('username');
         const usernameError = document.getElementById('username-error');
-        const modalReg = document.getElementById('modal-reg-required');
-        const walletSection = document.getElementById('wallet-section');
-
-        // Логика кнопок "Крутить"
+        
+        // --- ЛОГИКА ШАРИНГА (С ЗАЩИТОЙ ОТ БЫСТРОГО ЗАКРЫТИЯ) ---
+        let shareTimestamp = 0;
         document.querySelectorAll('.action-spin').forEach(btn => {
             btn.onclick = () => {
                 if (!db.isReg) {
-                    modalReg.style.display = 'flex';
+                    document.getElementById('modal-reg-required').style.display = 'flex';
                 } else {
-                    // Если рега есть — просим условия
                     showBanner('condition-banner');
-                    // Открываем шаринг ТГ
-                    Telegram.WebApp.openTelegramLink(`https://t.me/share/url?url=https://t.me/NFTreat_Bot/myapp&text=Получи бесплатный NFT подарок!`);
-                    db.count += 1;
-                    updateUI();
+                    shareTimestamp = Date.now(); // Запоминаем время нажатия
+                    Telegram.WebApp.openTelegramLink(`https://t.me/share/url?url=https://t.me/NFTreat_Bot/myapp&text=Забирай свой NFT подарок! 🎁`);
                 }
             };
         });
 
-        // Кнопка из модалки вниз
-        document.getElementById('go-to-reg').onclick = () => {
-            modalReg.style.display = 'none';
-            document.getElementById('registration-section').scrollIntoView({ behavior: 'smooth' });
+        // "Сканер" возврата: если юзер вернулся в аппку
+        window.onfocus = () => {
+            if (shareTimestamp > 0) {
+                const timeDiff = Date.now() - shareTimestamp;
+                if (timeDiff > 4000) { // Если отсутствовал больше 4 секунд — засчитываем
+                    db.count += 1;
+                    updateUI();
+                }
+                shareTimestamp = 0;
+            }
         };
 
-        // Кнопка Next (стрелочка)
-        document.getElementById('next-to-wallet').onclick = () => {
+        // --- ЛОГИКА КНОПКИ NEXT (СТРЕЛОЧКА) ---
+        document.getElementById('next-to-wallet').onclick = async () => {
             let val = usernameInput.value;
             if (val.length > 3 && !/[а-яё]/i.test(val)) {
-                walletSection.style.scrollIntoView({ behavior: 'smooth' });
-                walletSection.style.border = '2px solid var(--button-color)';
+                // 1. Показываем баннер
+                showBanner('user-linked-banner');
+                // 2. Скроллим к кошельку
+                document.getElementById('wallet-section').scrollIntoView({ behavior: 'smooth' });
+                // 3. СРАЗУ открываем окно выбора кошелька (авто-теп)
+                setTimeout(async () => {
+                    await tonConnectUI.openModal();
+                }, 1000);
             } else {
                 usernameError.style.display = 'block';
             }
         };
 
-        // Username логика
-        usernameInput.addEventListener('input', () => {
-            if (!usernameInput.value.startsWith('@')) usernameInput.value = '@' + usernameInput.value.replace('@','');
-            usernameError.style.display = /[а-яё]/i.test(usernameInput.value) ? 'block' : 'none';
-        });
+        // Модалка -> скролл
+        document.getElementById('go-to-reg').onclick = () => {
+            document.getElementById('modal-reg-required').style.display = 'none';
+            document.getElementById('registration-section').scrollIntoView({ behavior: 'smooth' });
+        };
 
-        // Отслеживание кошелька -> ФИНАЛ РЕГИ
         tonConnectUI.onStatusChange(wallet => {
             if (wallet && !db.isReg) {
                 db.isReg = true;
                 showBanner('reg-success-banner');
-                setTimeout(() => {
-                    window.scrollTo({ top: 0, behavior: 'smooth' });
-                }, 2000);
+                setTimeout(() => { window.scrollTo({ top: 0, behavior: 'smooth' }); }, 2000);
             }
             updateUI();
         });
@@ -168,12 +146,17 @@
         function showBanner(id) {
             const b = document.getElementById(id);
             b.classList.add('show');
-            setTimeout(() => b.classList.remove('show'), 4000);
+            setTimeout(() => b.classList.remove('show'), 3500);
         }
 
         function updateUI() {
             document.querySelectorAll('.share-count').forEach(el => el.innerText = db.count);
         }
+
+        usernameInput.addEventListener('input', () => {
+            if (!usernameInput.value.startsWith('@')) usernameInput.value = '@' + usernameInput.value.replace('@','');
+            usernameError.style.display = /[а-яё]/i.test(usernameInput.value) ? 'block' : 'none';
+        });
 
         updateUI();
     </script>

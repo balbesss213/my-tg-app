@@ -85,3 +85,5 @@ input {
 }
 .modal-content { background: var(--bg-color); width: 85%; padding: 30px 20px; border-radius: 24px; text-align: center; }
 .modal-btn { width: 100%; background: var(--button-color); color: white; border: none; padding: 14px; border-radius: 12px; font-weight: bold; margin-top: 15px; }
+
+.top-banner.info { background: #2196f3; color: white; } /* Синий цвет */
